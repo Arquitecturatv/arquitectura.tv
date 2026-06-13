@@ -1,0 +1,39 @@
+# ════════════════════════════════════════════════════════════════
+# FASE 9 — DEPLOY EN CLOUDFLARE PAGES · arquitectura.tv
+# ════════════════════════════════════════════════════════════════
+#
+# ESTRUCTURA DE ARCHIVOS DE DEPLOY:
+# ├── wrangler.toml              ← Cloudflare config
+# ├── .github/workflows/deploy.yml ← CI/CD automático
+# ├── public/_headers            ← HTTP security headers
+# ├── public/_redirects          ← URL redirects
+# └── .env.production            ← Variables de entorno
+#
+# PASOS PARA PRIMER DEPLOY:
+# ─────────────────────────
+# 1. npm install -g wrangler
+# 2. wrangler login
+# 3. npm run build
+# 4. wrangler pages deploy out/ --project-name=arquitectura-tv
+#
+# O conectar GitHub repo en dash.cloudflare.com → Pages → New Project
+# ════════════════════════════════════════════════════════════════
+
+name = "arquitectura-tv"
+pages_build_output_dir = "out"
+compatibility_date = "2024-12-01"
+
+[build]
+command = "npm run build"
+output = "out"
+
+[build.environment]
+NODE_VERSION = "20"
+
+[[pages.rules]]
+name = "www redirect"
+pattern = "www.arquitectura.tv/*"
+script = "redirect-www"
+
+[placement]
+mode = "smart"
