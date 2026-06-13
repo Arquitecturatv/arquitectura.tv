@@ -1,0 +1,1 @@
+export { VisualGallery } from './LatestVideos'

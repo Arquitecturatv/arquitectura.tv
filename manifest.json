@@ -1,0 +1,68 @@
+{
+  "name": "arquitectura.tv",
+  "short_name": "arquitectura.tv",
+  "description": "El portal de referencia internacional de arquitectura, urbanismo y diseño",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F5F3EE",
+  "theme_color": "#0A0A0A",
+  "orientation": "portrait-primary",
+  "lang": "es",
+  "categories": ["news", "education", "lifestyle"],
+  "icons": [
+    { "src": "/icons/icon-72.png", "sizes": "72x72", "type": "image/png" },
+    { "src": "/icons/icon-96.png", "sizes": "96x96", "type": "image/png" },
+    { "src": "/icons/icon-128.png", "sizes": "128x128", "type": "image/png" },
+    { "src": "/icons/icon-144.png", "sizes": "144x144", "type": "image/png" },
+    { "src": "/icons/icon-152.png", "sizes": "152x152", "type": "image/png" },
+    { "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable" },
+    { "src": "/icons/icon-384.png", "sizes": "384x384", "type": "image/png" },
+    { "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ],
+  "screenshots": [
+    {
+      "src": "/screenshots/home-desktop.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Home — arquitectura.tv"
+    },
+    {
+      "src": "/screenshots/home-mobile.png",
+      "sizes": "390x844",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Home móvil — arquitectura.tv"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Últimas noticias",
+      "short_name": "Noticias",
+      "description": "Ver las últimas noticias de arquitectura",
+      "url": "/noticias",
+      "icons": [{ "src": "/icons/shortcut-news.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "Proyectos",
+      "short_name": "Proyectos",
+      "description": "Explorar galería de proyectos",
+      "url": "/proyectos",
+      "icons": [{ "src": "/icons/shortcut-projects.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "Videos",
+      "short_name": "Videos",
+      "description": "Ver los últimos videos",
+      "url": "/videos",
+      "icons": [{ "src": "/icons/shortcut-video.png", "sizes": "96x96" }]
+    }
+  ],
+  "related_applications": [
+    {
+      "platform": "webapp",
+      "url": "https://arquitectura.tv"
+    }
+  ],
+  "prefer_related_applications": false
+}

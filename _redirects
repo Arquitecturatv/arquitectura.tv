@@ -1,0 +1,33 @@
+# ════════════════════════════════════════════════
+# public/_redirects — arquitectura.tv
+# ════════════════════════════════════════════════
+
+# ─── WWW → non-www ───────────────────────────────
+https://www.arquitectura.tv/* https://arquitectura.tv/:splat 301!
+
+# ─── Legacy URL patterns ─────────────────────────
+/blog/* /noticias/:splat 301
+/articulos/* /noticias/:splat 301
+/obras/* /proyectos/:splat 301
+/galeria/* /proyectos/:splat 301
+/categoria/* /revista/:splat 301
+/tag/* /buscar?q=:splat 302
+
+# ─── Spanish ↔ English slugs ─────────────────────
+/en/projects/* /proyectos/:splat 302
+/en/news/* /noticias/:splat 302
+/en/about /acerca 302
+
+# ─── Old feed formats ────────────────────────────
+/feed /rss.xml 301
+/feed.xml /rss.xml 301
+/atom.xml /rss.xml 301
+
+# ─── Short social links ──────────────────────────
+/yt https://youtube.com/@arquitecturatv 302
+/ig https://instagram.com/arquitecturatv 302
+/li https://linkedin.com/company/arquitecturatv 302
+/tw https://twitter.com/arquitecturatv 302
+
+# ─── SPA fallback ────────────────────────────────
+/* /index.html 200

@@ -1,0 +1,268 @@
+/* styles/globals.css — arquitectura.tv */
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,300..700;1,14..32,300..400&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── CSS Custom Properties ─────────────────────────────────────────────────── */
+:root {
+  /* Brand */
+  --color-copper: #C2952A;
+  --color-copper-light: #E8C76A;
+  --color-copper-dark: #8A6518;
+  --color-obsidian: #0A0A0A;
+  --color-travertine: #F5F3EE;
+  --color-cement: #8C7355;
+  --color-sage: #3A4A3A;
+  --color-bim-blue: #6B8CAE;
+
+  /* Spacing */
+  --site-padding: clamp(1rem, 5vw, 5rem);
+  --site-max-width: 1440px;
+  --content-max-width: 1280px;
+
+  /* Typography */
+  --font-serif: 'DM Serif Display', Georgia, serif;
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Transitions */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 400ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.06);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.1), 0 2px 6px rgba(0,0,0,0.08);
+  --shadow-lg: 0 10px 40px rgba(0,0,0,0.12), 0 4px 16px rgba(0,0,0,0.08);
+  --shadow-copper: 0 4px 20px rgba(194,149,42,0.25);
+}
+
+/* ─── Base ───────────────────────────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #F5F3EE;
+  color: #0A0A0A;
+  line-height: 1.6;
+}
+
+body.dark {
+  background-color: #0A0A0A;
+  color: #F5F3EE;
+}
+
+/* ─── Typography ─────────────────────────────────────────────────────────────── */
+.font-display {
+  font-family: var(--font-serif);
+}
+
+.text-display-xl {
+  font-family: var(--font-serif);
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  line-height: 1.0;
+  letter-spacing: -0.04em;
+}
+
+.text-display-lg {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 4.5vw, 3.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+}
+
+.text-display-md {
+  font-family: var(--font-serif);
+  font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+/* ─── Layout Utilities ──────────────────────────────────────────────────────── */
+.site-container {
+  width: 100%;
+  max-width: var(--site-max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--site-padding);
+  padding-right: var(--site-padding);
+}
+
+.content-container {
+  width: 100%;
+  max-width: var(--content-max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--site-padding);
+  padding-right: var(--site-padding);
+}
+
+/* ─── Category Badge Colors ─────────────────────────────────────────────────── */
+.badge-arquitectura { @apply bg-obsidian-100 text-obsidian-700; }
+.badge-urbanismo { @apply bg-sage/15 text-sage; }
+.badge-interiorismo { @apply bg-copper-50 text-copper-700; }
+.badge-bim { @apply bg-bim-blue/15 text-blue-700; }
+.badge-ia { @apply bg-obsidian-900 text-travertine; }
+.badge-featured { @apply bg-copper text-obsidian-900; }
+
+/* ─── Image Hover Effects ────────────────────────────────────────────────────── */
+.img-zoom {
+  overflow: hidden;
+}
+.img-zoom img {
+  transition: transform var(--transition-slow);
+}
+.img-zoom:hover img {
+  transform: scale(1.04);
+}
+
+/* ─── Card Hover ─────────────────────────────────────────────────────────────── */
+.card-hover {
+  transition: box-shadow var(--transition-base), transform var(--transition-base);
+}
+.card-hover:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+/* ─── Scrollbar ──────────────────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.2); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(0,0,0,0.35); }
+
+/* ─── Focus Visible ──────────────────────────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid var(--color-copper);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ─── Selection ──────────────────────────────────────────────────────────────── */
+::selection {
+  background: rgba(194, 149, 42, 0.2);
+  color: inherit;
+}
+
+/* ─── Article Prose ──────────────────────────────────────────────────────────── */
+.article-content {
+  font-size: 1.0625rem;
+  line-height: 1.78;
+  color: #1C1C1C;
+  max-width: 72ch;
+}
+
+.article-content h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(1.4rem, 2.5vw, 1.75rem);
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.article-content h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.01em;
+}
+
+.article-content p { margin-bottom: 1.5rem; }
+
+.article-content blockquote {
+  border-left: 3px solid var(--color-copper);
+  padding-left: 1.5rem;
+  margin: 2rem 0;
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  line-height: 1.5;
+  color: #3a3a3a;
+  font-style: italic;
+}
+
+.article-content figure {
+  margin: 2.5rem 0;
+}
+
+.article-content figcaption {
+  font-size: 0.8125rem;
+  color: var(--color-cement);
+  margin-top: 0.5rem;
+  font-style: italic;
+}
+
+/* ─── Ticker / Breaking News ────────────────────────────────────────────────── */
+.ticker-wrapper {
+  overflow: hidden;
+  white-space: nowrap;
+}
+.ticker-content {
+  display: inline-flex;
+  animation: ticker 50s linear infinite;
+}
+.ticker-content:hover {
+  animation-play-state: paused;
+}
+
+/* ─── Animations ─────────────────────────────────────────────────────────────── */
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.97); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.7s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.4s ease-out forwards;
+}
+
+/* Stagger delays */
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+
+/* ─── Reduced Motion ─────────────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .ticker-content {
+    animation: none;
+  }
+}
+
+/* ─── Print ──────────────────────────────────────────────────────────────────── */
+@media print {
+  .no-print { display: none !important; }
+  body { background: white; color: black; }
+  a { text-decoration: underline; }
+}

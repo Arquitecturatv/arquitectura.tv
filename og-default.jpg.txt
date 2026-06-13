@@ -1,0 +1,2 @@
+REEMPLAZA ESTE ARCHIVO con una imagen OG real de 1200x630px.
+Puedes generarla en: https://www.canva.com o https://og-image.vercel.app
