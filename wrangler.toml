@@ -23,17 +23,3 @@ name = "arquitectura-tv"
 pages_build_output_dir = "out"
 compatibility_date = "2024-12-01"
 
-[build]
-command = "npm run build"
-output = "out"
-
-[build.environment]
-NODE_VERSION = "20"
-
-[[pages.rules]]
-name = "www redirect"
-pattern = "www.arquitectura.tv/*"
-script = "redirect-www"
-
-[placement]
-mode = "smart"
