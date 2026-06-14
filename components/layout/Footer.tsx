@@ -89,11 +89,11 @@ export function Footer() {
               <p className="text-xs font-medium uppercase tracking-wider text-travertine/40 mb-3">
                 Newsletter semanal
               </p>
-              <form
-                onSubmit={(e) => e.preventDefault()}
-                className="flex gap-2"
-                aria-label="Suscribirse al newsletter"
-              >
+             <form
+  action="#"
+  className="flex gap-2"
+  aria-label="Suscribirse al newsletter"
+>
                 <input
                   type="email"
                   placeholder="tu@email.com"
